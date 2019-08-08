@@ -1,0 +1,75 @@
+﻿@model AspNetMvc2.Introduction.Models.EmployeeListViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RazorDemo</title>
+</head>
+<body>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>City Id </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Employees)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.CityId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    @*Genelde MOdel hesaplanıp aktarılır.
+        
+        @ = Razor Simgesi
+        
+        *@
+
+    <p>@DateTime.Now</p> @*Zamanı gösteren fonksiyonuda razor ile kullanabiliriz.*@
+
+
+
+    @{
+
+        var date = DateTime.Now - TimeSpan.FromDays(3);
+
+
+            }
+    <p>3 day ago was @date</p>
+    @{
+// razor simgesini bu şekilde  C# taki kodları kullabiliriz.
+
+    }
+
+    @*Using Bloğu = çöp Toplayıcı görevi görüyor.*@
+
+    @using (Html.BeginForm())
+    {
+    <input type="text" name="" value="" />
+    <button type="submit"></button>
+
+    }
+
+
+</body>
+</html>

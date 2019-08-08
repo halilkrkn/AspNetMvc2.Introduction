@@ -1,0 +1,22 @@
+﻿@model AspNetMvc2.Introduction.Models.EmployeeAddViewModel;
+
+
+
+    <form asp-controller="Employee" asp-action="Add">
+
+        <label asp-for="Employee.Id"></label><input asp-for="Employee.Id" /><br />
+        <label asp-for="Employee.FirstName"></label><input asp-for="Employee.FirstName" /><br />
+        <label asp-for="Employee.LastName"></label><input asp-for="Employee.LastName" /><br />
+        <label asp-for="Employee.CityId"></label><select asp-for="Employee.CityId" asp-items="Model.Cities"></select>
+        <button type="submit">Add</button>
+
+    </form>
+
+    <br /> <br /><br />
+    <employee-list count ="2"></employee-list>
+
+@section MySection{ 
+
+    Some content
+}
+

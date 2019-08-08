@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>Menu</div>
+    <div>
+        @await Component.InvokeAsync("StudentList", new { filter = "a"})
+    </div>
+    <div>
+
+        @RenderBody() @*Değişken kısmıdır*@
+    </div>
+    
+    <div>
+
+        @RenderSection("MySection", false)
+
+    </div>
+
+    <div>Footer</div>
+
+</body>
+</html>
